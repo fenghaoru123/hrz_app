@@ -13,10 +13,9 @@ class BaseTestCase(unittest.TestCase):
         '''
         设置driver对象
         需要保证每个用例的执行都是同一个driver对象
-        java当中的设计模式==》单例模式
-        :return:
         '''
-        cls.driver=driver   #cls.driver就是BaseTestCase的类变量
+
+        cls.driver=driver
 
     @classmethod
     def get_driver(cls):
@@ -82,9 +81,5 @@ class BaseTestCase(unittest.TestCase):
         text=BaseTestCase.find_element(locator).text   #获取定位页面的文本进行断言
         return text
 
-    @classmethod
-    def goto_home(cls):
-        # pass
-        home=BaseTestCase.find_element(p.home)
-        BaseTestCase.click(home)
+
 
